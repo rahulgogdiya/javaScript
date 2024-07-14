@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Password Validation</title>
+</head>
+<body>
+    <fieldset>
+    <form action="#" method="post" onsubmit="return validate()" >
+        <p>
+            <h1 style="font-size: 30px; text-align:center;">Ws cube Tech <br>Registrtion Form 
+            </h1>
+        </p>
+
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" >as
+        </p>
+
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password " id="password" onkeyup="passCheck(this.value)" autocomplete="off">
+        </p>
+
+        <p>
+            <label for="conform-password">Conform-Password</label>
+            <input type="password" name="conform-password" id="conform-password">
+        </p>
+        <p>
+
+            <label class="password-chack">8 characters</label>
+            <br>
+            <label class="password-chack">1 lowe case characters</label><br>
+            <label class="password-chack">1 uper case characters</label><br>
+            <label class="password-chack">1 numerical characters</label><br>
+            <label class="password-chack">8 special characters</label>
+            
+        </p>
+        <p>
+            <error id="alert-caps"></error>
+            <input type="submit" name="submit" id="submit" value="submit">
+        </p>
+    </form>
+</fieldset>
+</body>
+
+<script>
+function passCheck(data){
+    var passCheck = document.getElementsByClassName('password-chack');
+    const lowerCase = new RegExp('(?=.*[a-z])');
+    const uppercCase = new RegExp('(?=.*[A-Z])');
+    const number = new RegExp('(?=.*[0-9])');
+    const special = new RegExp('(?=.*[!@#\$%\&*])');
+    const eightchar = new RegExp('(?=.[8,])');
+
+
+    if(eightchar.test(data)){
+        passCheck[0].style.color="green";
+    }else{
+        passCheck[0].style.color="red";
+    }
+    if(lowerCase.test(data)){
+        passCheck[1].style.color="green";
+    }else{
+        passCheck[1].style.color="red";
+    }
+    if(uppercCase.test(data)){
+        passCheck[3].style.color="green";
+    }else{
+        passCheck[3].style.color="red";
+    }
+    if(number.test(data)){
+        passCheck[4].style.color="green";
+    }else{
+        passCheck[4].style.color="red";
+    }
+    if(eightchar.test(data)){
+        passCheck[5].style.color="green";
+    }else{
+        passCheck[5].style.color="red";
+    }
+    
+}
+</script>
+</html>

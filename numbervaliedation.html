@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>number vvalidation</title>
+  </head>
+  <body>
+    pleace Enter your number <br />
+    <input type="text" name="" onkeyup="val(this)" />
+    <div id="res"></div>
+    <script>
+        document.getElementById('res').style.color="red";
+      function val(elem) {
+        if(isNaN(elem.value)){
+           document.getElementById('res').innerText = "please enter number only" 
+        }else{
+            document.getElementById('res').innerText = "";
+            if(elem.value.length>10){
+                document.getElementById('res').innerText = "please enter number only 10 degits" 
+                             }else{
+                document.getElementById('res').innerText = "";
+            }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="return validate()">
+        <p>
+            <h1 style="font-size: 30px; text-align:center;" >Ws cube tech <br>Registration Foprm</h1>
+        </p>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username">
+            
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="passwors">
+
+        </p>
+        <p>
+            <label for="conform-password">Conform-password</label>
+            <input type="password" id="conform-password" name="conform-password" onkeyup="check(this)" >
+            <error id="alert"></error>
+        </p>
+        <p>
+            <input type="submit" id="submit" value="submit">
+        </p>
+    </form>
+</body>
+<script>
+    var password = document.getElementById('password');
+    var flag = 1;
+    function check(elem){
+        if(elem.value.length>0){
+            if(elem.value != password.value){
+            document.getElementById('alert').innerText = "conform pass does not match";
+            flag = 0;
+        }else{
+            document.getElementById('alert').innerText = "";
+            flag = 1;
+        }
+    }else{
+        document.getElementById('alert').innerText = "";
+        flag = 0;
+    }
+}
+function validate(){
+    if(flag == 1){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+</script>
+</html>

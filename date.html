@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date function</title>
+</head>
+<body>
+    <h1 id="res">Date Function</h1>
+    <button onclick="getDate()">Date</button>
+    <button onclick="year()">year</button>
+    <button onclick="month()">Month</button>
+    <button onclick="hours()">hours</button>
+    <button onclick="toDate()">Date</button>
+    <button onclick="day()">day</button>
+    <button onclick=""></button>
+</body>
+<script>
+    var date = new Date();
+    function getDate(){
+        document.getElementById('res').innerText=date
+    }
+  
+    function toDate(){
+        document.getElementById('res').innerText=date.getDate
+    }
+
+    function day(){
+        document.getElementById('res').innerText=date.getDay();
+    }
+
+    function hours(){
+        document.getElementById('res').innerText=date.getHours();
+    }
+    function year(){
+        document.getElementById('res').innerText=date.getFullYear();
+    }
+    function month(){
+        var Month = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
+        document.getElementById('res').innerText=Month[date.getMonth()];
+    }
+</script>
+</html>

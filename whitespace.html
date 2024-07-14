@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" method="post" onsubmit="return validate()">
+        <p>
+            <h1 style="font-size: 30px; text-align:center;" >Ws cube tech <br>Registration Foprm</h1>
+        </p>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="username" onkeyup="white(this.value)">
+            
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="passwors">
+
+        </p>
+        <p>
+            <label for="conform-password">Conform-password</label>
+            <input type="password" id="conform-password" name="conform-password" onkeyup="check(this)" >
+            <error id="alert"></error>
+        </p>
+        <p>
+            <input type="submit" id="submit" value="submit">
+        </p>
+    </form>
+</body>
+
+<script>
+    var pattern = /\s/g;
+    var alert = document.getElementById('alert');
+    function white(data){
+        var isSpace = pattern.test(data);
+        if(isSpace){
+            alert.innerText = " space is not allow"
+        }else{
+            alert.innerText = "";
+        }
+    }
+</script>
+</html>
